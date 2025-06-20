@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JENTAFLEX COMPANY LIMITED</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      color: #4a006e;
+    }
+
+    header {
+      background: linear-gradient(to right, #6a0dad, #9c27b0);
+      color: white;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(154, 51, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      padding-top: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: #d1b3ff;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #d1b3ff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+
+    .hero {
+      position: relative;
+      padding: 6rem 2rem;
+      text-align: center;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background 1s ease-in-out;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(73, 0, 109, 0.6);
+      z-index: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 2;
+      padding: 0 1rem;
+    }
+
+    .slider-nav button {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      color: #4a006e;
+      font-size: 2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+      width: 40px;
+      height: 40px;
+    }
+
+    .slider-nav button:hover {
+      background-color: #ffffff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(154, 51, 255, 0.1);
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(154, 51, 255, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #6a0dad;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .contact-form,
+    .contact-info {
+      flex: 1 1 400px;
+      background: #f6f0fa;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(154, 51, 255, 0.1);
+      color: #4a006e;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      background: white;
+      color: #4a006e;
+    }
+
+    button {
+      background-color: #9c27b0;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #6a0dad;
+    }
+
+    footer {
+      background-color: #4a006e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JENTAFLEX</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact-us">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h2>Delivering Purity, Packaging and Performance</h2>
+      <p><i>Supplying quality water products and packaging materials for homes and businesses.</i></p>
+    </div>
+  </section>
+
+  <section id="blog" class="container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Bag Fashion">
+      <div class="card-content">
+        <h3>Elegant Bags for Every Occasion</h3>
+        <p>Discover the latest trends in bag fashion from Jentaflex. From casual totes to elegant handbags.</p>
+        <a href="jentaflexbags.html"><button>Discover more</button></a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="New folder/skdbkfsdfsd.webp" alt="Bottled Water">
+      <div class="card-content">
+        <h3>Bottled Water</h3>
+        <p>Stay hydrated with Jentaflex's premium bottled water. Crisp, clean, and refreshing.</p>
+        <a href="jentaflexbottledwater.html"><button>Discover more</button></a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="New folder/cdcjhbcks.webp" alt="Sachet Water">
+      <div class="card-content">
+        <h3>Safe Sachet Water</h3>
+        <p>Affordable, accessible, and safe drinking water for all. Quality guaranteed.</p>
+        <a href="jentaflexsachetwater.html"><button>Discover more</button></a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="New folder/greergs.webp" alt="Ice Cubes">
+      <div class="card-content">
+        <h3>Edible Ice Cubes</h3>
+        <p>Perfectly frozen cubes for parties, events, or home use. Delivered fresh and clean.</p>
+        <a href="jentafleicecubes.html"><button>Discover more</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us">
+    <div class="contact-container">
+      <div class="contact-form">
+        <h2>Contact Jentaflex</h2>
+        <form action="https://formsubmit.co/jentaflex2014@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="box">
+          <div class="input-group">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+          </div>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <input type="email" name="email" placeholder="Email" required>
+          <div class="input-group">
+            <input type="text" name="zip" placeholder="Zip Code">
+            <select name="country" required>
+              <option value="" disabled selected>Country</option>
+              <option>Nigeria</option>
+              <option>Ghana</option>
+              <option>Kenya</option>
+              <option>United Kingdom</option>
+              <option>China</option>
+              <option>South Africa</option>
+            </select>
+          </div>
+          <textarea name="subject" placeholder="Subject" required></textarea>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h3>Or reach us directly</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1750332729613!6m8!1m7!1sLOynewwjz72JliZZa39afQ!2m2!1d6.526741333841008!2d3.332383739292753!3f2.3245116250755635!4f-0.3267306812502824!5f0.7820865974627469" width="100%" height="300" style="border:0; margin-bottom: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+        <ul>
+          <li>📍 Lagos Office:<br>Plot 4, Commerce and Industry, Cowbell Way, Isolo, Lagos<br>Email: <a href="mailto:jentaflex2014@gmail.com">jentaflex2014@gmail.com</a></li>
+          <li>Customer Care: +234‑802 333 6616 , +234‑903 052 407 ,+234‑703 455 8568 </li>
+          <li>Bottled Water Sales Hotline: +234‑903 891 10725 , +234‑802 339 4551</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 JENTAFLEX COMPANY LIMITED. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hero = document.getElementById('hero');
+    const images = [
+      "https://images.unsplash.com/photo-1576765607924-0469b3ba24e5",
+      "https://images.unsplash.com/photo-1560185127-6ed189bf01c5",
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac"
+    ];
+    let index = 0;
+
+    function updateHero() {
+      hero.style.background = `linear-gradient(rgba(73, 0, 109, 0.6), rgba(73, 0, 109, 0.6)), url('${images[index]}') center/cover no-repeat`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % images.length;
+      updateHero();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + images.length) % images.length;
+      updateHero();
+    }
+
+    updateHero();
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>
